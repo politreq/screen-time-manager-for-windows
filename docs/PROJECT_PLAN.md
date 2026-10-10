@@ -19,9 +19,10 @@
 ## Состояние подготовки
 
 - Исходники склонированы в `/workspace/screen-time-manager-for-windows`.
-- Создана локальная ветка `bootstrap/parental-control`.
-- Попытка создать форк в `politreq` через GitHub API отклонена:
-  `403 Resource not accessible by integration`. Удалённый форк не создан.
+- Создана ветка `bootstrap/parental-control` для подготовительных документов.
+- Пользователь создал форк:
+  https://github.com/politreq/screen-time-manager-for-windows
+  Связь с исходным репозиторием и право записи проверены через GitHub API.
 - Отдельный проект/окружение Codex Cloud не создан: в этой сессии нет инструмента
   его создания. Текущая облачная рабочая среда доступна.
 - Поведение приложения не изменено. EXE и APK не собирались; Rust toolchain
@@ -97,17 +98,13 @@
 
 ## Как завершить подключение
 
-1. Создать форк: https://github.com/spamsch/screen-time-manager-for-windows/fork
-   Владелец — `politreq`, имя — `screen-time-manager-for-windows`.
-2. В Codex Cloud выбрать форк как репозиторий нового окружения. Для облачной
-   разработки установить Rust; Windows-сборку выполнять на Windows runner.
-3. После создания форка в текущей рабочей копии выполнить:
+Форк создан. В рабочей копии `origin` указывает на форк `politreq`, а `upstream`
+на исходный репозиторий `spamsch`.
 
-   ```bash
-   git remote rename origin upstream
-   git remote add origin https://github.com/politreq/screen-time-manager-for-windows.git
-   git push -u origin bootstrap/parental-control
-   ```
+В Codex Cloud выбрать `politreq/screen-time-manager-for-windows` как репозиторий
+нового окружения. Для облачной разработки установить Rust; Windows-сборку
+выполнять на Windows runner. Чтобы инструкции действовали на основной ветке,
+объединить подготовительную ветку через pull request.
 
 Текущая ветка содержит только подготовительные документы. Следующая конкретная
 задача: Windows CI и обязательная настройка защищённого PIN с миграцией базы.
